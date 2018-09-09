@@ -26,13 +26,12 @@ opener = request.build_opener(handler)
 
 """访问所需必要参数"""
 # 目标页
-des_url = 'http://www.exfun.cn/forum.php?mod=viewthread&tid=112265&extra=page%3D1'
+des_url = 'url1'
 # for login
-login_url = "http://www.exfun.cn/member.php?mod=logging&action=login"
+login_url = "url2"
 # 主页
-des_ur2 = "http://www.exfun.cn/home.php?mod=space&uid=1795527&do=profile&from=space"
+des_ur2 = "url3"
 # headers
-# loginning_url="http://www.exfun.cn/member.php?mod=logging&action=login&loginsubmit=yes&handlekey=login&loginhash=xxxxx&inajax=1"
 headers = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "zh-CN,zh;q=0.9",
@@ -69,7 +68,7 @@ class LoginVisitSave():
         regex = "loginhash=(\S{5})"
         regex_result = re.search(regex, s.login_url_decode_content)
         loginhash = regex_result.group(1)
-        s.loginning_url = "http://www.exfun.cn/member.php?mod=logging&action=login&loginsubmit=yes&handlekey=login&loginhash=%s&inajax=1" % loginhash
+        s.loginning_url = "urlx" % loginhash
         # print(" When VisitLogin loginhash:", loginhash)
         # print(s.loginning_url)
 
@@ -79,10 +78,10 @@ class LoginVisitSave():
     def Loginning(s):
         # usr = input("请输入登录名：")
         # pw = input("请输入登录密码：")
-        usr = "chaoyuan"
-        pw = "chaoyuandemima"
+        usr = "xxx"
+        pw = "xxx"
         data = {"formhash": s.formhash,
-                "referer": "http://www.exfun.cn/",
+                "referer": "http://www.url/",
                 "loginfield": "username",
                 "username": usr,
                 "password": pw,
@@ -126,7 +125,7 @@ class LoginVisitSave():
 class Spider(object):
 
     def __init__(self):
-        self.model_url = "http://www.exfun.cn/forum.php?mod=forumdisplay&fid=73&page=%d"
+        self.model_url = "urlx&page=%d"
 
     def UseRequests(self, url):
         # time.sleep(0.02)
@@ -248,7 +247,7 @@ if __name__ == '__main__':
 # Accept-Encoding: gzip, deflate
 # Accept-Language: zh-CN,zh;q=0.9
 # Connection: keep-alive
-# Host: www.exfun.cn
+# Host: url
 # Upgrade-Insecure-Requests: 1
 # User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
 
@@ -261,10 +260,12 @@ if __name__ == '__main__':
 # Expires: -1
 # Pragma: no-cache
 # Server: nginx
-# Set-Cookie: T7ml_f39a_lastvisit=1536284980; expires=Sun, 07-Oct-2018 02:49:40 GMT; path=/; domain=.exfun.cn
-# Set-Cookie: T7ml_f39a_invite_auth=deleted; expires=Thu, 07-Sep-2017 02:49:39 GMT; path=/; domain=.exfun.cn
-# Set-Cookie: T7ml_f39a_saltkey=r44Oq7A7; expires=Sun, 07-Oct-2018 02:49:40 GMT; path=/; domain=.exfun.cn; httponly
-# Set-Cookie: T7ml_f39a_lastact=1536288580%09member.php%09logging; expires=Sat, 08-Sep-2018 02:49:40 GMT; path=/; domain=.exfun.cn
+# Set-Cookie: T7ml_f39a_lastvisit=1536284980; expires=Sun, 07-Oct-2018 02:49:40 GMT; path=/; domain=.url
+# Set-Cookie: T7ml_f39a_invite_auth=deleted; expires=Thu, 07-Sep-2017 02:49:39 GMT; path=/; domain=.url
+# Set-Cookie: T7ml_f39a_saltkey=r44Oq7A7; expires=Sun, 07-Oct-2018 02:49:40 GMT; path=/; domain=.url; httponly
+# Set-Cookie: T7ml_f39a_lastact=1536288580%09member.php%09logging; expires=Sat, 08-Sep-2018 02:49:40 GMT; path=/; domain=.url
+
+
 # Transfer-Encoding: chunked
 # Vary: Accept-Encoding
 # Vary: Accept-Encoding
@@ -282,17 +283,17 @@ if __name__ == '__main__':
 # Content-Length: 154
 # Content-Type: application/x-www-form-urlencoded
 # Cookie: T7ml_f39a_saltkey=r44Oq7A7; T7ml_f39a_lastvisit=1536284980; T7ml_f39a_lastact=1536288580%09plugin.php%09; Hm_lvt_bab7d9af18c858d9b8fa3ae5935aa762=1536288586; Hm_lpvt_bab7d9af18c858d9b8fa3ae5935aa762=1536288586
-# Host: www.exfun.cn
-# Origin: http://www.exfun.cn
-# Referer: http://www.exfun.cn/member.php?mod=logging&action=login
+# Host: www.url
+# Origin: http://www.url
+# Referer: url
 # Upgrade-Insecure-Requests: 1
 # User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
 
 # #首次开始登录data值
 # formhash: a4b73664
-# referer: http://www.exfun.cn/./
+# referer: url
 # loginfield: username
 # username: 123
-# password: 5fa72358f0b4fb4f2c5d7de8c9a41846
+# password: 5fa72358f0b4fb4f2
 # questionid: 0
 # answer:
